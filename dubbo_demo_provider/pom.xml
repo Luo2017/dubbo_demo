@@ -33,6 +33,12 @@
         </dependency>
 
         <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+
+        <!-- 由于 project 的 dependencies 单独列出了这些包，所以可以不用写 starter-web 等，但是这里由于 provider 不需要 tomcat，因为它与消费者通讯是基于 dubbo 协议的，不是经过 tomcat 的-->
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <exclusions>
@@ -43,11 +49,6 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
 
         <!-- Zookeeper dependencies -->
         <dependency>
